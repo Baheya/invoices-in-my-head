@@ -6,7 +6,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev"
+    "dev": "remix dev",
+    "dev:css": "postcss styles --base styles --dir app/styles -w",
+    "build:css": "postcss styles --base styles --dir app/styles --env production"
   },
   "dependencies": {
     "@remix-run/node": "^1.5.1",
@@ -20,7 +22,11 @@
     "@remix-run/dev": "^1.5.1",
     "@remix-run/eslint-config": "^1.5.1",
     "@remix-run/serve": "^1.5.1",
-    "eslint": "^8.15.0"
+    "eslint": "^8.15.0",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-nesting": "^10.1.7"
   },
   "engines": {
     "node": ">=14"

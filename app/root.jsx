@@ -5,10 +5,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
+
+import { getColorScheme } from './getInitialColorMode';
 
 import globalStyles from './styles/global.css';
 import fonts from './styles/fonts.css';
+
+export const loader = async ({ request }) => ({
+  colorScheme: await getColorScheme(request),
+});
 
 export const meta = () => ({
   charset: 'utf-8',
@@ -22,8 +29,12 @@ export const links = () => [
 ];
 
 export default function App() {
+  const { colorScheme } = useLoaderData();
+
+  // console.log(colorScheme);
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={colorScheme}>
       <head>
         <Meta />
         <Links />

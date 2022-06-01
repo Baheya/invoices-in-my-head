@@ -4,7 +4,7 @@ import {
   DarkModeToggle,
   darkModeToggleLinks,
 } from '~/components/DarkModeToggle';
-import { colorSchemeCookie, getColorScheme } from '~/getInitialColorMode';
+import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
 
 export function links() {
   return [...darkModeToggleLinks()];

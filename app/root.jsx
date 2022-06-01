@@ -8,7 +8,7 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 
-import { getColorScheme } from './getInitialColorMode';
+import { getColorScheme } from './utils/getInitialColorMode';
 
 import globalStyles from './styles/global.css';
 import fonts from './styles/fonts.css';

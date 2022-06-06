@@ -1,0 +1,48 @@
+.calendar {
+    width: 220px;
+
+    font-family: 'League Spartan';
+    font-weight: 700;
+    font-size: var(--12px, 12px);
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: var(--dark-200);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 8px;
+}
+
+.calendar-header button {
+    color: var(--purple-200);
+}
+
+.calendar-header h2 {
+    margin: 0 auto;
+    font-size: inherit;
+}
+
+.calendar table {
+    width: 100%;
+}
+
+.calendar-cell {
+    cursor: default;
+    text-align: center;
+}
+
+.calendar-cell--selected {
+    color: var(--purple-200);
+}
+
+.calendar-cell--unavailable {
+    color: var(--spectrum-global-color-red-600);
+}
+
+.calendar-cell--disabled {
+    color: gray;
+}

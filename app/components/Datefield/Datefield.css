@@ -1,0 +1,51 @@
+.datefield {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 700;
+    font-size: var(--12px, 12px);
+    letter-spacing: -0.25px;
+
+}
+
+html[data-theme='light'] .datefield {
+    color: var(--dark-200);
+}
+
+html[data-theme='dark'] .datefield {
+    color: var(--white);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.datefield-field {
+    display: inline-flex;
+    padding: 2px 4px;
+    border-radius: 2px;
+    border: 1px solid var(--gray);
+    background: var(--spectrum-global-color-gray-50);
+}
+
+.datefield-field:focus-within {
+    border-color: var(--blue);
+}
+
+.datefield-segment {
+    padding: 0 2px;
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+}
+
+.datefield-segment.datefield-placeholder {
+    color: var(--react-spectrum-datepicker-placeholder-color);
+}
+
+.datefield-segment:focus {
+    color: white;
+    background: var(--blue);
+    outline: none;
+    border-radius: 2px;
+}

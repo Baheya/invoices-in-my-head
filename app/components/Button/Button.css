@@ -1,0 +1,116 @@
+button.button {
+    border: none;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+
+}
+
+@media screen and (-ms-high-contrast: active) {
+    button.button {
+
+        border: 2px solid currentcolor;
+    }
+}
+
+a.button {
+    text-decoration: none;
+}
+
+
+a.button,
+button.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 1.75em;
+    min-width: 10ch;
+    min-height: 44px;
+
+    text-align: center;
+    line-height: 1.1;
+    transition: 220ms all ease-in-out;
+
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: var(--12px);
+    letter-spacing: -0.25px;
+}
+
+/* VARIANTS */
+
+.button--primary {
+    background-color: var(--purple-200);
+    color: var(--white);
+}
+
+.button--primary:hover {
+    background-color: var(--purple-100);
+}
+
+html[data-theme='light'] .button--edit {
+    background-color: var(--light-100);
+    color: var(--slate-300);
+}
+
+html[data-theme='light'] .button--edit:hover {
+    background-color: var(--slate-100);
+    color: var(--slate-300);
+}
+
+html[data-theme='dark'] .button--edit {
+    background-color: var(--navy-100);
+    color: var(--slate-100);
+}
+
+html[data-theme='dark'] .button--edit:hover {
+    background-color: var(--white);
+    color: var(--slate-100);
+}
+
+
+html[data-theme='light'] .button--save {
+    background-color: #373B53;
+    color: var(--slate-200);
+}
+
+html[data-theme='light'] .button--save:hover {
+    background-color: var(--dark-200);
+    color: var(--slate-200);
+}
+
+html[data-theme='dark'] .button--save {
+    background-color: #373B53;
+    color: var(--slate-200);
+}
+
+html[data-theme='dark'] .button--save:hover {
+    background-color: var(--navy-200);
+    color: var(--slate-100);
+}
+
+.button--delete {
+    background-color: var(--red-100);
+    color: var(--white);
+}
+
+.button--delete:hover {
+    background-color: var(--salmon-100);
+    color: var(--white);
+}
+
+.button--add {
+    background-color: var(--light-100);
+    color: var(--slate-300);
+    width: 100%;
+}
+
+.button--add:before {
+    content: '+';
+    padding-inline-end: 0.2em;
+}
+
+.button--add:hover {
+    background-color: var(--slate-100);
+    color: var(--slate-300);
+}

@@ -5,9 +5,10 @@ import {
   darkModeToggleLinks,
 } from '~/components/DarkModeToggle';
 import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
+import { Button, buttonLinks } from '~/components/Button';
 
 export function links() {
-  return [...darkModeToggleLinks()];
+  return [...buttonLinks(), ...darkModeToggleLinks()];
 }
 
 export const action = async ({ request }) => {
@@ -27,6 +28,10 @@ export default function Index() {
       <Form method="POST">
         <DarkModeToggle type="submit" />
       </Form>
+      <Button variant="edit">Edit</Button>
+      <Button variant="save">Save as Draft</Button>
+      <Button variant="delete">Delete</Button>
+      <Button variant="add">Add New Item</Button>
     </div>
   );
 }

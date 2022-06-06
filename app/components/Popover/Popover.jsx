@@ -30,15 +30,17 @@ export function Popover(props) {
   return (
     <FocusScope contain restoreFocus>
       <div
+        className="popover"
         {...mergeProps(overlayProps, modalProps, dialogProps)}
         ref={popoverRef}
-        style={{
-          position: 'absolute',
-          background: 'var(--page-background)',
-          marginTop: 4,
-          padding: 20,
-          zIndex: 1,
-        }}
+        style={
+          {
+            // position: 'absolute',
+            // marginTop: 4,
+            // padding: 20,
+            // zIndex: 1,
+          }
+        }
       >
         {children}
         <DismissButton onDismiss={onClose} />

@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from '@remix-run/react';
+import { SSRProvider } from '@react-aria/ssr';
 
 import { getColorScheme } from './utils/getInitialColorMode';
 
@@ -28,7 +29,7 @@ export const links = () => [
   { rel: 'stylesheet', href: fonts },
 ];
 
-export default function App() {
+function AppContainer() {
   const { colorScheme } = useLoaderData();
 
   // console.log(colorScheme);
@@ -46,5 +47,13 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  return (
+    <SSRProvider>
+      <AppContainer />
+    </SSRProvider>
   );
 }

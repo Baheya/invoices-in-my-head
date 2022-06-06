@@ -9,6 +9,17 @@
     "dev": "remix dev"
   },
   "dependencies": {
+    "@internationalized/date": "^3.0.0-rc.1",
+    "@react-aria/calendar": "^3.0.0-rc.1",
+    "@react-aria/datepicker": "^3.0.0-rc.1",
+    "@react-aria/dialog": "^3.2.0",
+    "@react-aria/focus": "^3.6.0",
+    "@react-aria/i18n": "^3.4.0",
+    "@react-aria/overlays": "^3.9.0",
+    "@react-aria/ssr": "^3.2.0",
+    "@react-aria/utils": "^3.13.0",
+    "@react-stately/calendar": "^3.0.0-rc.1",
+    "@react-stately/datepicker": "^3.0.0-rc.1",
     "@remix-run/node": "^1.5.1",
     "@remix-run/react": "^1.5.1",
     "@remix-run/vercel": "^1.5.1",

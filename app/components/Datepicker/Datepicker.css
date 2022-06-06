@@ -1,0 +1,38 @@
+.datepicker-label {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--12px, 12px);
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: var(--slate-300);
+}
+
+html[data-theme='light'] .datepicker-label {
+    color: var(--slate-300);
+}
+
+html[data-theme='dark'] .datepicker-label {
+    color: var(--slate-100);
+}
+
+.datepicker-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+}
+
+html[data-theme='light'] .datepicker-field {
+    border: 1px solid var(--slate-100);
+}
+
+html[data-theme='dark'] .datepicker-field {
+    border: 1px solid var(--navy-200);
+    background-color: var(--navy-200);
+}
+
+.datepicker-field button svg {
+    color: var(--slate-300);
+}

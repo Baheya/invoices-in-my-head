@@ -10,8 +10,13 @@ const STYLES = {
   save: 'button button--save',
   delete: 'button button--delete',
   add: 'button button--add',
+  icon: 'button button--icon',
 };
 
-export function Button({ children, variant = 'primary' }) {
-  return <button className={STYLES[variant]}>{children}</button>;
+export function Button({ children, variant, onPress, ...delegated }) {
+  return (
+    <button className={STYLES[variant]} onClick={onPress} {...delegated}>
+      {children}
+    </button>
+  );
 }

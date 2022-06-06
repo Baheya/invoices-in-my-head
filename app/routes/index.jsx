@@ -6,9 +6,10 @@ import {
 } from '~/components/DarkModeToggle';
 import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
 import { Button, buttonLinks } from '~/components/Button';
+import { Datepicker, datepickerLinks } from '~/components/Datepicker';
 
 export function links() {
-  return [...buttonLinks(), ...darkModeToggleLinks()];
+  return [...buttonLinks(), ...darkModeToggleLinks(), ...datepickerLinks()];
 }
 
 export const action = async ({ request }) => {
@@ -24,14 +25,18 @@ export const action = async ({ request }) => {
 
 export default function Index() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: '3rem' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '3rem',
+        flexDirection: 'column',
+      }}
+    >
       <Form method="POST">
         <DarkModeToggle type="submit" />
       </Form>
-      <Button variant="edit">Edit</Button>
-      <Button variant="save">Save as Draft</Button>
-      <Button variant="delete">Delete</Button>
-      <Button variant="add">Add New Item</Button>
+      <Datepicker label="Event date" />
     </div>
   );
 }

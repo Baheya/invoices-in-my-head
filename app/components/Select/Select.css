@@ -1,0 +1,43 @@
+.select {
+    width: fit-content;
+}
+
+.select-label {
+    font-weight: 500;
+    font-size: var(--12px, 12px);
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: var(--slate-300);
+    margin-block-end: 0.5em;
+}
+
+.select-button {
+    background: none;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+    display: inline-flex;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: var(--12px, 12px);
+    line-height: 15px;
+    letter-spacing: -0.25px;
+}
+
+html[data-theme='light'] .select-button {
+    color: var(--dark-200);
+    border: 1px solid var(--slate-100);
+}
+
+html[data-theme='dark'] .select-button {
+    color: var(--white);
+    background-color: var(--navy-200);
+    border: 1px solid var(--navy-200);
+}
+
+.select .popover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-block-start: 1rem;
+}

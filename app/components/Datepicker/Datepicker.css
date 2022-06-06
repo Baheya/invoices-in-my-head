@@ -1,9 +1,7 @@
 .datepicker-label {
     font-family: 'League Spartan';
-    font-style: normal;
     font-weight: 500;
     font-size: var(--12px, 12px);
-    line-height: 15px;
     letter-spacing: -0.25px;
     color: var(--slate-300);
 }

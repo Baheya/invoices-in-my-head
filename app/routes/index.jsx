@@ -7,9 +7,16 @@ import {
 import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
 import { Button, buttonLinks } from '~/components/Button';
 import { Datepicker, datepickerLinks } from '~/components/Datepicker';
+import { Select, selectLinks } from '../components/Select';
+import { Item } from '@react-stately/collections';
 
 export function links() {
-  return [...buttonLinks(), ...darkModeToggleLinks(), ...datepickerLinks()];
+  return [
+    ...buttonLinks(),
+    ...darkModeToggleLinks(),
+    ...datepickerLinks(),
+    ...selectLinks(),
+  ];
 }
 
 export const action = async ({ request }) => {
@@ -36,7 +43,18 @@ export default function Index() {
       <Form method="POST">
         <DarkModeToggle type="submit" />
       </Form>
-      <Datepicker label="Event date" />
+      <Select label="Favorite Color">
+        <Item>Red</Item>
+        <Item>Orange</Item>
+        <Item>Yellow</Item>
+        <Item>Green</Item>
+        <Item>Blue</Item>
+        <Item>Purple</Item>
+        <Item>Black</Item>
+        <Item>White</Item>
+        <Item>Lime</Item>
+        <Item>Fushsia</Item>
+      </Select>
     </div>
   );
 }

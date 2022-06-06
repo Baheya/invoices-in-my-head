@@ -1,11 +1,8 @@
-import styles from '../../styles/DarkModeToggle.css';
+import styles from './DarkModeToggle.css';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
-
-const STORAGE_KEY = 'user-color-scheme';
-const COLOR_MODE_KEY = '--color-mode';
 
 export function DarkModeToggle({ ...delegated }) {
   return (

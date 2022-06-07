@@ -9,6 +9,7 @@ import { Button, buttonLinks } from '~/components/Button';
 import { Datepicker, datepickerLinks } from '~/components/Datepicker';
 import { Select, selectLinks } from '../components/Select';
 import { Item } from '@react-stately/collections';
+import { TextField, textFieldLinks } from '../components/TextField';
 
 export function links() {
   return [
@@ -16,6 +17,7 @@ export function links() {
     ...darkModeToggleLinks(),
     ...datepickerLinks(),
     ...selectLinks(),
+    ...textFieldLinks(),
   ];
 }
 
@@ -43,18 +45,7 @@ export default function Index() {
       <Form method="POST">
         <DarkModeToggle type="submit" />
       </Form>
-      <Select label="Favorite Color">
-        <Item>Red</Item>
-        <Item>Orange</Item>
-        <Item>Yellow</Item>
-        <Item>Green</Item>
-        <Item>Blue</Item>
-        <Item>Purple</Item>
-        <Item>Black</Item>
-        <Item>White</Item>
-        <Item>Lime</Item>
-        <Item>Fushsia</Item>
-      </Select>
+      <TextField label="Hellooooooo" />
     </div>
   );
 }

@@ -1,24 +1,11 @@
 import { redirect } from '@remix-run/node';
-import { Form } from '@remix-run/react';
-import {
-  DarkModeToggle,
-  darkModeToggleLinks,
-} from '~/components/DarkModeToggle';
+
 import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
-import { Button, buttonLinks } from '~/components/Button';
-import { Datepicker, datepickerLinks } from '~/components/Datepicker';
-import { Select, selectLinks } from '../components/Select';
-import { Item } from '@react-stately/collections';
-import { TextField, textFieldLinks } from '../components/TextField';
+
+import { Header, headerLinks } from '../components/Header';
 
 export function links() {
-  return [
-    ...buttonLinks(),
-    ...darkModeToggleLinks(),
-    ...datepickerLinks(),
-    ...selectLinks(),
-    ...textFieldLinks(),
-  ];
+  return [...headerLinks()];
 }
 
 export const action = async ({ request }) => {
@@ -34,18 +21,8 @@ export const action = async ({ request }) => {
 
 export default function Index() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '3rem',
-        flexDirection: 'column',
-      }}
-    >
-      <Form method="POST">
-        <DarkModeToggle type="submit" />
-      </Form>
-      <TextField label="Hellooooooo" />
-    </div>
+    <>
+      <Header />
+    </>
   );
 }

@@ -1,0 +1,33 @@
+.header {
+    background-color: #373B53;
+    overflow: hidden;
+}
+
+.header__list {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.header__list .header__list-item:first-child {
+    margin-inline-end: auto;
+}
+
+.header__list .header__list-item:not(:first-child) {
+    padding-inline: 1.5rem;
+}
+
+.header__list .header__list-item:last-child {
+    position: relative;
+}
+
+.header__list .header__list-item:last-child:before {
+    content: '';
+    border-inline-start: 1px solid var(--grey-200);
+    position: absolute;
+    top: -2rem;
+    bottom: -2rem;
+    left: 0;
+}

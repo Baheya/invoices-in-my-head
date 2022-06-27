@@ -3,9 +3,10 @@ import { redirect } from '@remix-run/node';
 import { colorSchemeCookie, getColorScheme } from '~/utils/getInitialColorMode';
 
 import { Header, headerLinks } from '../components/Header';
+import { InvoiceItem, invoiceItemLinks } from '../components/InvoiceItem';
 
 export function links() {
-  return [...headerLinks()];
+  return [...invoiceItemLinks(), ...headerLinks()];
 }
 
 export const action = async ({ request }) => {
@@ -23,6 +24,7 @@ export default function Index() {
   return (
     <>
       <Header />
+      <InvoiceItem />
     </>
   );
 }

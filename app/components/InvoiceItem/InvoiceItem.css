@@ -1,0 +1,38 @@
+.invoice-item {
+    background-color: var(--navy-200);
+    color: var(--white);
+    width: 100%;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 330px;
+}
+
+.invoice-item__id {
+    font-weight: 700;
+    font-size: var(--12px);
+    letter-spacing: -0.25px;
+}
+
+.invoice-item__id span {
+    color: var(--slate-300);
+}
+
+.invoice-item__name,
+.invoice-item__status {
+    place-self: end;
+}
+
+.invoice-item__date {
+    color: var(--slate-100);
+    font-weight: 500;
+    font-size: var(--12px);
+    letter-spacing: -0.25px;
+}
+
+.invoice-item__amount {
+    font-weight: 700;
+    font-size: var(--16px);
+    letter-spacing: -0.8px;
+}

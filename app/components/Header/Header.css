@@ -1,5 +1,5 @@
 .header {
-    background-color: #373B53;
+    background-color: var(--navy-200);
     overflow: hidden;
 }
 
@@ -9,6 +9,10 @@
 
     display: flex;
     align-items: center;
+}
+
+.header__list .header__list-item form {
+    display: flex;
 }
 
 .header__list .header__list-item:first-child {

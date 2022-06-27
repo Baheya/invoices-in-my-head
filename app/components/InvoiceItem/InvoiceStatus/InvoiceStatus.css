@@ -1,0 +1,22 @@
+.invoice-status {
+    min-height: 45px;
+    background-color: var(--backgroundColor);
+    color: var(--color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em 1em;
+    border-radius: 6px;
+    max-width: 105px;
+}
+
+.invoice-status__text {
+    font-weight: 700;
+    font-size: var(--12px);
+    letter-spacing: -0.25px;
+}
+
+.invoice-status__text:before {
+    content: '•';
+    margin-inline-end: 5px;
+}

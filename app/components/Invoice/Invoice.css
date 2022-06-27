@@ -8,6 +8,11 @@
     max-width: 350px;
 }
 
+[data-theme='light'] .invoice {
+    background-color: var(--white);
+    color: var(--slate-300);
+}
+
 .invoice>* {
     grid-column: 1 / -1;
 }
@@ -44,11 +49,19 @@
     letter-spacing: -0.3125px;
 }
 
+[data-theme='light'] .invoice h3+p {
+    color: var(--black);
+}
+
 .invoice__id {
     font-weight: 700;
     font-size: var(--12px);
     letter-spacing: -0.25px;
     color: var(--white);
+}
+
+[data-theme='light'] .invoice__id {
+    color: var(--black);
 }
 
 .invoice__id span {
@@ -75,6 +88,10 @@
     padding-block-end: 0;
 }
 
+[data-theme='light'] .invoice__services {
+    background-color: var(--light-100);
+}
+
 .invoice__services__list {
     list-style: none;
     padding: 0;
@@ -93,6 +110,11 @@
     place-self: end;
 }
 
+[data-theme='light'] .invoice__service>*:first-child,
+[data-theme='light'] .invoice__service>*:last-child {
+    color: var(--black);
+}
+
 .invoice__total {
     background-color: var(--black);
     margin-inline: -1.2rem;
@@ -101,4 +123,9 @@
     display: flex;
     justify-content: space-between;
     margin-block-start: 1.2rem;
+}
+
+[data-theme='light'] .invoice__total {
+    background-color: #373B53;
+    color: var(--white);
 }

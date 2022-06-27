@@ -7,6 +7,13 @@
     gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
     max-width: 330px;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+}
+
+[data-theme='light'] .invoice-item {
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .invoice-item__id {
@@ -22,6 +29,11 @@
 .invoice-item__name,
 .invoice-item__status {
     place-self: end;
+}
+
+[data-theme='light'] .invoice-item__name,
+[data-theme='light'] .invoice-item__date {
+    color: var(--slate-200);
 }
 
 .invoice-item__date {

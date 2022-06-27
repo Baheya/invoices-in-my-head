@@ -10,6 +10,11 @@
     max-width: 105px;
 }
 
+[data-theme='light'] .invoice-status {
+    background-color: var(--backgroundColorDark);
+    color: var(--colorDark);
+}
+
 .invoice-status__text {
     font-weight: 700;
     font-size: var(--12px);

@@ -6,7 +6,7 @@ export function links() {
   return [...invoiceStatusLinks(), { rel: 'stylesheet', href: styles }];
 }
 
-export function InvoiceItem({ id = 'RT3080', name = 'Jensen Huang' }) {
+export function InvoiceItem({ id = 'RT3080', name = 'Jensen Huang', status = 'draft', dueDate = '19 Aug 2021', total = '£ 1,800.90' }) {
   return (
     <li>
       <div className="invoice-item">
@@ -16,10 +16,10 @@ export function InvoiceItem({ id = 'RT3080', name = 'Jensen Huang' }) {
         </p>
         <p className="invoice-item__name">{name}</p>
         <div>
-          <p className="invoice-item__date">Due 19 Aug 2021</p>
-          <p className="invoice-item__amount">£ 1,800.90</p>
+          <p className="invoice-item__date">Due {new Date(dueDate).toLocaleDateString('en-US', {weekday: undefined, day: '2-digit', month: 'short', year: 'numeric'})}</p>
+          <p className="invoice-item__total">{new Intl.NumberFormat('en-US', {style: 'currency', currency: 'GBP'}).format(total)}</p>
         </div>
-        <InvoiceStatus className="invoice-item__status" status="draft" />
+        <InvoiceStatus className="invoice-item__status" status={status} />
       </div>
     </li>
   );

@@ -1,0 +1,33 @@
+.invoices {
+    padding: 1rem;
+}
+
+.invoices__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    margin-block: 1rem;
+}
+
+.invoices__top-bar h1 {
+    line-height: 1;
+    }
+
+[data-theme='light'] .invoices__top-bar h1 {
+color: var(--dark-200);
+}
+
+[data-theme='light'] .invoices__top-bar p {
+    color: var(--slate-200);
+    }
+
+.invoices__list {
+    list-style: none;
+    padding: 0;
+}
+
+.invoices__list > li + li {
+    margin-block-start: 1rem;
+
+}

@@ -15,8 +15,6 @@ export const getColorScheme = async (request) => {
     'Sec-CH-Prefers-Color-Scheme'
   );
 
-  console.log(systemPreferredColorScheme);
-
   // Return the manually selected theme
   // or system preferred theme or default theme
   return userSelectedColorScheme ?? systemPreferredColorScheme ?? 'light';

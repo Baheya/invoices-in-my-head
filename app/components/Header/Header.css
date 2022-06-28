@@ -35,3 +35,42 @@
     bottom: -2rem;
     left: 0;
 }
+
+@media (min-width: 1024px) {
+    .header {
+        --header-width: 72px;
+        grid-column: 1 / 2;
+        height: 100%;
+        width: var(--header-width);
+        border-top-right-radius: 20px;
+    }
+
+    .header__list {
+        flex-direction: column;
+        height: 100%;
+        position: fixed;
+
+    }
+
+    .header__list .header__list-item:last-child {
+        align-self: flex-end;
+    }
+
+    .header__list .header__list-item:last-child:before {
+        content: '';
+        border-top: 1px solid var(--grey-200);
+        border-inline-start: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .header__list .header__list-item:first-child {
+        margin-block-end: auto;
+    }
+
+    .header__list .header__list-item:not(:first-child) {
+        padding: 1rem;
+    }
+}

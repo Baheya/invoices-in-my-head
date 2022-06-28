@@ -32,8 +32,6 @@ export const links = () => [
 function AppContainer() {
   const { colorScheme } = useLoaderData();
 
-  // console.log(colorScheme);
-
   return (
     <html lang="en" data-theme={colorScheme}>
       <head>

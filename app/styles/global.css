@@ -78,6 +78,13 @@ body {
   font-weight: 400;
 }
 
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
 img,
 picture,
 video,

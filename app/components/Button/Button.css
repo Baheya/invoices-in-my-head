@@ -18,8 +18,7 @@ a.button {
 }
 
 
-a.button,
-button.button {
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +44,26 @@ button.button {
     /* width: 2.5rem;
     height: 2.5rem; */
     padding: 0.35em;
+    padding-inline-end: 1em;
     /* border-radius: 50%; */
+}
+
+.button.button--icon .icon__container {
+    border-radius: 50%;
+    background-color: var(--white);
+    position: relative;
+    margin-inline-end: 0.8em;
+    width: 2em;
+    height: 2em;
+}
+
+.button.button--icon .icon__container>svg {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /* .button--icon>svg {

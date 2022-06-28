@@ -8,10 +8,14 @@ const STYLES = {
   pending: {
     '--color': 'hsla(34, 100%, 50%, 1)',
     '--backgroundColor': 'hsla(34, 100%, 50%, 0.06)',
+    '--colorDark': 'hsla(34, 100%, 50%, 1)',
+    '--backgroundColorDark': 'hsla(34, 100%, 50%, 0.06)',
   },
   paid: {
     '--color': 'hsla(160, 67%, 52%, 1)',
     '--backgroundColor': 'hsla(160, 67%, 52%, 0.06)',
+    '--colorDark': 'hsla(160, 67%, 52%, 1)',
+    '--backgroundColorDark': 'hsla(160, 67%, 52%, 0.06)',
   },
   draft: {
     '--color': 'hsla(231, 75%, 93%, 1)',

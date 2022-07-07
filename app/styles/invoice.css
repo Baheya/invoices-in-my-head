@@ -1,0 +1,24 @@
+.invoice__container {
+    background-color: inherit;
+    max-width: 700px;
+}
+
+.invoice__section {
+    padding-block-end: 6rem;
+}
+
+.invoice-actions__container {
+    margin-block-end: 2rem;
+}
+
+.button--back {
+    justify-self: start;
+    align-self: center;
+    margin-block: 1rem;
+}
+
+@media (min-width: 768px) {
+    .invoice__section {
+        padding-block-end: 0;
+    }
+}

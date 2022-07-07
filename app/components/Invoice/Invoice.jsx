@@ -1,73 +1,86 @@
+import { InvoiceSummary, invoiceSummaryLinks } from './InvoiceSummary';
+
 import styles from './Invoice.css';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [...invoiceSummaryLinks(), { rel: 'stylesheet', href: styles }];
 }
 
-export function Invoice() {
+export function Invoice({
+  id,
+  description,
+  clientAddress,
+  date,
+  paymentDue,
+  clientName,
+  clientEmail,
+  senderAddress,
+  items,
+  total,
+}) {
   return (
-    <article className="invoice">
-      <h2 className="invoice__id">
-        <span>#</span>XM9141
-      </h2>
-      <p className="invoice__title">Graphic Design</p>
+    <article className="invoice-grid invoice">
+      <div className="invoice-grid__item-1">
+        <h2 className="invoice__id title-xxs">
+          <span>#</span>
+          {id}
+        </h2>
+        <p className="body-sm">{description}</p>
+      </div>
 
-      <address className="invoice__address">
-        19 Union Terrace
-        <br /> London
-        <br /> E1 3EZ
-        <br /> United Kingdom
+      <address className="invoice-grid__item-2 body-xs">
+        {clientAddress.street}
+        <br /> {clientAddress.city}
+        <br /> {clientAddress.postCode}
+        <br /> {clientAddress.country}
       </address>
 
-      <div className="invoice__date">
-        <h3>Invoice Date</h3>
-        <p>Date</p>
+      <div className="invoice-grid__item-3">
+        <h3 className="body-sm">Invoice Date</h3>
+        <p className="title-xs">
+          {new Date(date).toLocaleDateString('en-US', {
+            weekday: undefined,
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+          })}
+        </p>
       </div>
 
-      <div className="invoice__due">
-        <h3>Payment Due</h3>
-        <p>Date</p>
+      <div className="invoice-grid__item-4">
+        <h3 className="body-sm">Payment Due</h3>
+        <p className="title-xs">
+          {new Date(paymentDue).toLocaleDateString('en-US', {
+            weekday: undefined,
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+          })}
+        </p>
       </div>
 
-      <div className="invoice__recipient">
-        <h3>Bill To</h3>
-        <p>Name</p>
+      <div className="invoice-grid__item-5">
+        <h3 className="body-sm">Bill To</h3>
+        <p className="title-xs">{clientName}</p>
 
-        <address className="invoice__address">
-          84 Church Way
-          <br /> Bradford
-          <br /> BD1 9PB
-          <br /> United Kingdom
+        <address className="invoice-grid__item-6 body-xs">
+          {senderAddress.street}
+          <br /> {senderAddress.city}
+          <br /> {senderAddress.postCode}
+          <br /> {senderAddress.country}
         </address>
       </div>
 
-      <h3>Sent to</h3>
-      <address>mail</address>
-
-      <div className="invoice__services">
-        <ul className="invoice__services__list">
-          <li className="invoice__services__item">
-            <div className="invoice__service">
-              <h4>Banner Design</h4>
-              <p>1 x £ 156.00</p>
-              <p>£ 156.00</p>
-            </div>
-          </li>
-
-          <li className="invoice__services__item">
-            <div className="invoice__service">
-              <h4>Banner Design</h4>
-              <p>1 x £ 156.00</p>
-              <p>£ 156.00</p>
-            </div>
-          </li>
-        </ul>
-
-        <div className="invoice__total">
-          <h3>Amount Due</h3>
-          <p>Price</p>
-        </div>
+      <div className="invoice-grid__item-7">
+        <h3 className="body-sm">Sent to</h3>
+        <address className="title-xs">{clientEmail}</address>
       </div>
+
+      <InvoiceSummary
+        className="invoice-grid__item-8"
+        items={items}
+        total={total}
+      />
     </article>
   );
 }

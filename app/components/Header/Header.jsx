@@ -1,4 +1,3 @@
-import { Form } from '@remix-run/react';
 import { DarkModeToggle, darkModeToggleLinks } from '../DarkModeToggle';
 import { Avatar, avatarLinks } from '../Avatar';
 import { Logo, logoLinks } from '../Logo';
@@ -14,7 +13,7 @@ export function links() {
   ];
 }
 
-export function Header() {
+export function Header({ fetcher }) {
   return (
     <header className="header">
       <ul className="header__list">
@@ -22,9 +21,9 @@ export function Header() {
           <Logo className="header__logo" />
         </li>
         <li className="header__list-item">
-          <Form method="POST">
+          <fetcher.Form method="POST" action="/toggle-theme">
             <DarkModeToggle type="submit" />
-          </Form>
+          </fetcher.Form>
         </li>
         <li className="header__list-item">
           <Avatar />

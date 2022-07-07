@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useFetcher,
   useLoaderData,
 } from '@remix-run/react';
 import { SSRProvider } from '@react-aria/ssr';
@@ -13,10 +14,11 @@ import { getColorScheme } from './utils/getInitialColorMode';
 
 import globalStyles from './styles/global.css';
 import fonts from './styles/fonts.css';
+import { Header, headerLinks } from './components/Header';
 
-export const loader = async ({ request }) => ({
-  colorScheme: await getColorScheme(request),
-});
+export const loader = async ({ request }) => {
+  return { colorScheme: await getColorScheme(request) };
+};
 
 export const meta = () => ({
   charset: 'utf-8',
@@ -25,12 +27,14 @@ export const meta = () => ({
 });
 
 export const links = () => [
+  ...headerLinks(),
   { rel: 'stylesheet', href: globalStyles },
   { rel: 'stylesheet', href: fonts },
 ];
 
 function AppContainer() {
   const { colorScheme } = useLoaderData();
+  const fetcher = useFetcher();
 
   return (
     <html lang="en" data-theme={colorScheme}>
@@ -39,6 +43,7 @@ function AppContainer() {
         <Links />
       </head>
       <body>
+        <Header fetcher={fetcher} />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

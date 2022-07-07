@@ -1,0 +1,20 @@
+.button--back {
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: baseline;
+    color: var(--white);
+}
+
+[data-theme='light'] .button--back {
+    color: var(--black);
+}
+
+.button--back:hover {
+    color: var(--slate-300);
+}
+
+.button--back span {
+    color: var(--black);
+    margin-inline-end: 15px;
+}

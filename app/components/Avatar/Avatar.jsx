@@ -8,7 +8,7 @@ export function Avatar() {
   return (
     <img
       className="user-avatar"
-      src="images/image-avatar.webp"
+      src="/images/image-avatar.webp"
       alt="User avatar"
     />
   );
